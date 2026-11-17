@@ -65,6 +65,11 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
   resize: vertical;
   border: 1px solid #aaa;
   border-radius: 6px;
+  text-shadow:
+  0 0 5px #FF8000,
+  0 0 10px #FF8000,
+  0 0 20px #FF8000,
+  0 0 35px #FF5500;
 }
 
 .font-controls {
