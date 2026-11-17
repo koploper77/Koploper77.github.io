@@ -90,7 +90,7 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
   padding: 10px 16px;
   margin: 5px;
   border-radius: 5px;
-  background: #333;
+  background: #000080;
   color: white;
   text-decoration: none;
   border: none;
