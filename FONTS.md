@@ -32,6 +32,34 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
 
 </div>
 
+
+<h2>NMBS MS96 interior dotmatrix font</h2>
+Note: the characters "I", "J", "K", "Q", "R", "X", "Y", "q" and "y" are drawn based on guesses, as well as every digit as these are not shown on these displays normally. To type the NMBS logo, use the character "|". For the punctuation marks, "-", ":", "'", ".", "/" are realistic, the other punctuation marks have also been guessed. All other characters are pixel perfect recreations.
+
+<div class="font-card">
+
+<h3>Try the font!</h3>
+
+<textarea id="myFontText_MS96" spellcheck="false">This is a test sentence.</textarea>
+
+<div class="font-controls">
+  <label for="myFontSize_MS96">Font size:</label>
+  <input type="range" id="myFontSize_MS96" min="12" max="100" value="36">
+  <span id="myFontSizeValue_MS96">36px</span>
+</div>
+
+<button type="button" id="myFontReset_MS96">Reset text</button>
+
+<a class="font-download" href="/assets/fonts/NMBS%20MS96%20Koersbord%20Binnenkant%20v26_correctmap.ttf" download>
+  Download the font
+</a>
+
+</div>
+
+
+
+
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');  
 @font-face {
@@ -124,6 +152,43 @@ body label, body span {
 .font-controls input[type="range"] {
   accent-color: #000080;
 }
+
+
+/* NMBS MS96 interior display font */
+@font-face {
+  font-family: "MS96Binnenkant";
+  src: url("/assets/fonts/NMBS%20MS96%20Koersbord%20Binnenkant%20v26_correctmap.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* MS96 tester */
+#myFontText_MS96 {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 180px;
+  padding: 15px;
+
+  font-family: "MS96Binnenkant", sans-serif;
+  font-size: 36px;
+
+  background-color: #1E1913;
+  color: #EDB700;
+  text-align: center;
+
+  resize: vertical;
+  border: 1px solid #555555;
+  border-radius: 6px;
+
+  text-shadow:
+    0 0 5px #EDB700,
+    0 0 10px #EDB700,
+    0 0 20px #D99F00,
+    0 0 35px #A87500;
+}
+
   
 </style>
 
