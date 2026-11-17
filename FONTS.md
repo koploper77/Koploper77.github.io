@@ -40,7 +40,7 @@ Note: the characters "I", "J", "K", "Q", "R", "X", "Y", "q" and "y" are drawn ba
 
 <h3>Try the font!</h3>
 
-<textarea id="myFontText_MS96" spellcheck="false">This is a test sentence.</textarea>
+<textarea id="myFontText_MS96" spellcheck="false" wrap="off">This is a test sentence.</textarea>
 
 <div class="font-controls">
   <label for="myFontSize_MS96">Font size:</label>
@@ -203,7 +203,7 @@ body label, body span {
 
 #myFontText_MS96.scrolling {
   white-space: pre;
-  overflow-x: auto;
+  overflow-x: hidden;
   text-align: left;
 }
 
@@ -252,11 +252,26 @@ const reveal = document.getElementById("myFontReveal_MS96");
 
 let revealTimer;
 
+let scrollTimer;
+
 scroll.addEventListener("change", function () {
+  clearInterval(scrollTimer);
+
   text.classList.toggle("scrolling", scroll.checked);
-  text.style.animation = scroll.checked
-    ? "ms96scroll 12s linear infinite"
-    : "none";
+
+  if (scroll.checked) {
+    text.scrollLeft = 0;
+
+    scrollTimer = setInterval(function () {
+      text.scrollLeft += 1;
+
+      if (text.scrollLeft >= text.scrollWidth - text.clientWidth) {
+        text.scrollLeft = 0;
+      }
+    }, 20);
+  } else {
+    text.scrollLeft = 0;
+  }
 });
 
 reveal.addEventListener("change", function () {
