@@ -71,6 +71,23 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
   0 0 20px #FF8000,
   0 0 35px #FF5500;
 }
+  
+/* Dark page background and white text */
+body {
+  background-color: #252525 !important;
+  color: #FFFFFF !important;
+}
+
+/* Keep the page layout transparent so the dark background shows */
+.wrapper, header, section, footer {
+  background-color: transparent !important;
+}  
+
+body, body p, body li, body h1, body h2,
+body h3, body h4, body h5, body h6,
+body label, body span {
+  color: #FFFFFF;
+}
 
 .font-controls {
   display: flex;
