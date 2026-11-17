@@ -33,6 +33,7 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
 </div>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');  
 @font-face {
   font-family: "ICMmKoersbord";
   src: url("/assets/fonts/ICMm%20Koersbord%20v15.ttf") format("truetype");
@@ -87,6 +88,7 @@ body, body p, body li, body h1, body h2,
 body h3, body h4, body h5, body h6,
 body label, body span {
   color: #FFFFFF;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
 .font-controls {
