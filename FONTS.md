@@ -27,7 +27,7 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
 <button type="button" id="myFontReset">Reset text</button>
 
 <a class="font-download" href="/assets/fonts/ICMm%20Koersbord%20v15.ttf" download>
-  Download ICMm Koersbord v13.ttf
+  Download the font
 </a>
 
 </div>
