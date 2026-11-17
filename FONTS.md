@@ -58,8 +58,9 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
   font-family: "ICMmKoersbord", sans-serif;
   font-size: 36px;
 
-  background-color: #FFFFFF;
-  color: #FF8000;
+  background-color: #000000;
+  color: #FFF171;
+  text-align: center;
 
   resize: vertical;
   border: 1px solid #aaa;
