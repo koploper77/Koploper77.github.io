@@ -277,7 +277,7 @@ reveal.addEventListener("change", function () {
     if (opacity >= 1) {
       clearInterval(revealTimer);
     }
-  }, 100);
+  }, 200);
 });
 })();
 
