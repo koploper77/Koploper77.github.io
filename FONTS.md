@@ -210,4 +210,24 @@ body label, body span {
     text.value = "This is a test sentence.";
   });
 })();
+
+//For MS96
+(function () {
+  const text = document.getElementById("myFontText_MS96");
+  const size = document.getElementById("myFontSize_MS96");
+  const sizeValue = document.getElementById("myFontSizeValue_MS96");
+  const reset = document.getElementById("myFontReset_MS96");
+
+  if (!text || !size || !sizeValue || !reset) return;
+
+  size.addEventListener("input", function () {
+    text.style.fontSize = size.value + "px";
+    sizeValue.textContent = size.value + "px";
+  });
+
+  reset.addEventListener("click", function () {
+    text.value = "This is a test sentence.";
+  });
+})();
+
 </script>
