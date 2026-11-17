@@ -16,7 +16,7 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
 
 <h3>Try the font!</h3>
 
-<textarea id="myFontText" spellcheck="false">This is a test sentence.</textarea>
+<textarea id="myFontText_ICMm" spellcheck="false">This is a test sentence.</textarea>
 
 <div class="font-controls">
   <label for="myFontSize">Font size:</label>
@@ -48,14 +48,19 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
   margin: 25px 0;
 }
 
-#myFontText {
+#myFontText_ICMm {
   display: block;
   box-sizing: border-box;
   width: 100%;
   min-height: 180px;
   padding: 15px;
+
   font-family: "ICMmKoersbord", sans-serif;
   font-size: 36px;
+
+  background-color: #FFFFFF;
+  color: #FF8000;
+
   resize: vertical;
   border: 1px solid #aaa;
   border-radius: 6px;
@@ -94,7 +99,7 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
 
 <script>
 (function () {
-  const text = document.getElementById("myFontText");
+  const text = document.getElementById("myFontText_ICMm");
   const size = document.getElementById("myFontSize");
   const sizeValue = document.getElementById("myFontSizeValue");
   const reset = document.getElementById("myFontReset");
