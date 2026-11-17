@@ -28,7 +28,7 @@ Here are some fonts I created:
 
   <button type="button" onclick="
     document.getElementById('fontInput').value =
-    'The quick brown fox jumps over the lazy dog.';
+    'This is a test sentence.';
   ">Reset text</button>
 
   <a href="/assets/fonts/ICMm Koersbord v13.ttf" download>
