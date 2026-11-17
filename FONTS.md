@@ -26,7 +26,7 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
 
 <button type="button" id="myFontReset">Reset text</button>
 
-<a class="font-download" href="/assets/fonts/ICMm%20Koersbord%20v13.ttf" download>
+<a class="font-download" href="/assets/fonts/ICMm%20Koersbord%20v15.ttf" download>
   Download ICMm Koersbord v13.ttf
 </a>
 
@@ -35,7 +35,7 @@ Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is
 <style>
 @font-face {
   font-family: "ICMmKoersbord";
-  src: url("/assets/fonts/ICMm%20Koersbord%20v13.ttf") format("truetype");
+  src: url("/assets/fonts/ICMm%20Koersbord%20v15.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
