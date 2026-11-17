@@ -1,6 +1,6 @@
 ---
 layout: page
 title: "Fonts"
-permalink: /Fonts/
+permalink: /fonts/
 ---
 Here are some fonts I created:
