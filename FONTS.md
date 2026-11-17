@@ -6,8 +6,8 @@ permalink: /fonts/
 Here are some fonts I created:
 
 <div class="font-tester">
-  <h3>Try ICMm destination display dotmatrix font</h3>
-
+  <h3>ICMm destination display dotmatrix font</h3>
+  Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is not a 1 or 7 due to a lack of reference material. All other characters are a pixel perfect recreation of real Dutch NS ICMm "Koploper" outside destination displays, under the assumption that the letter "q" is a mirrored "p" and the letter "F" is written like the letter "E" with the lower horizontal bar removed. All other letters have been verified with pictures of real Koploper trains :)
   <textarea
     id="fontInput"
     placeholder="Type something here..."
