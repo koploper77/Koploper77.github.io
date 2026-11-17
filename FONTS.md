@@ -183,10 +183,8 @@ body label, body span {
   border-radius: 6px;
 
   text-shadow:
-    0 0 2px #EDB700,
-    0 0 4px #EDB700,
-    0 0 4px #D99F00,
-    0 0 2px #A87500;
+    0 0 1px #F5C52E,
+    0 0 2px #D5A500;
 }
 
   
