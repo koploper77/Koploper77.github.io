@@ -49,7 +49,7 @@ Here are some fonts I created:
   min-height: 180px;
   box-sizing: border-box;
   padding: 15px;
-  font-family: "MyFont", sans-serif;
+  font-family: "ICMm_Koersbord", sans-serif;
   font-size: 36px;
   resize: vertical;
   border: 1px solid #aaa;
