@@ -48,6 +48,20 @@ Note: the characters "I", "J", "K", "Q", "R", "X", "Y", "q" and "y" are drawn ba
   <span id="myFontSizeValue_MS96">36px</span>
 </div>
 
+<div class="font-controls">
+  <label>
+    <input type="checkbox" id="myFontScroll_MS96">
+    Enable horizontal scrolling
+  </label>
+</div>
+
+<div class="font-controls">
+  <label>
+    <input type="checkbox" id="myFontReveal_MS96">
+    Enable gradual illumination
+  </label>
+</div>
+
 <button type="button" id="myFontReset_MS96">Reset text</button>
 
 <a class="font-download" href="/assets/fonts/NMBS%20MS96%20Koersbord%20Binnenkant%20v26_correctmap.ttf" download>
@@ -187,6 +201,12 @@ body label, body span {
     0 0 2px #D5A500;
 }
 
+#myFontText_MS96.scrolling {
+  white-space: pre;
+  overflow-x: auto;
+  text-align: left;
+}
+
   
 </style>
 
@@ -226,6 +246,39 @@ body label, body span {
   reset.addEventListener("click", function () {
     text.value = "This is a test sentence.";
   });
+
+  const scroll = document.getElementById("myFontScroll_MS96");
+const reveal = document.getElementById("myFontReveal_MS96");
+
+let revealTimer;
+
+scroll.addEventListener("change", function () {
+  text.classList.toggle("scrolling", scroll.checked);
+  text.style.animation = scroll.checked
+    ? "ms96scroll 12s linear infinite"
+    : "none";
+});
+
+reveal.addEventListener("change", function () {
+  clearInterval(revealTimer);
+
+  if (!reveal.checked) {
+    text.style.opacity = "1";
+    return;
+  }
+
+  text.style.opacity = "0";
+  let opacity = 0;
+
+  revealTimer = setInterval(function () {
+    opacity += 0.05;
+    text.style.opacity = opacity;
+
+    if (opacity >= 1) {
+      clearInterval(revealTimer);
+    }
+  }, 100);
+});
 })();
 
 </script>
