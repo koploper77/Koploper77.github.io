@@ -3,38 +3,29 @@ layout: page
 title: "Fonts"
 permalink: /fonts/
 ---
-Here are some fonts I created:
 
-<div class="font-tester">
-  <h3>ICMm destination display dotmatrix font</h3>
-  Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is not a 1 or 7 due to a lack of reference material. All other characters are a pixel perfect recreation of real Dutch NS ICMm "Koploper" outside destination displays, under the assumption that the letter "q" is a mirrored "p" and the letter "F" is written like the letter "E" with the lower horizontal bar removed. All other letters have been verified with pictures of real Koploper trains :)
-  <textarea
-    id="fontInput"
-    placeholder="Type something here..."
-    spellcheck="false"
-  >This is a test sentence.</textarea>
+# My Fonts
 
-  <div class="font-controls">
-    <label for="fontSize">Font size:</label>
-    <input
-      type="range"
-      id="fontSize"
-      min="12"
-      max="100"
-      value="36"
-    >
-    <span id="fontSizeValue">36px</span>
-  </div>
+Here are some fonts I created!
 
-  <button type="button" onclick="
-    document.getElementById('fontInput').value =
-    'This is a test sentence.';
-  ">Reset text</button>
+## ICMm destination display dotmatrix font
 
-  <a href="/assets/fonts/ICMm Koersbord v13.ttf" download>
-    Download ICMm Koersbord v13.ttf
-  </a>
-</div>
+Note: Does not contain the letters "J", "Q", "W", "X", "Y", or any digit that is not a 1 or 7 due to a lack of reference material. All other characters are a pixel perfect recreation of real Dutch NS ICMm "Koploper" outside destination displays, under the assumption that the letter "q" is a mirrored "p" and the letter "F" is written like the letter "E" with the lower horizontal bar removed. All other letters have been verified with pictures of real Koploper trains :)
+
+\<div class="font-card">   \<h3>Try the font!\</h3>
+
+&#x20; \<textarea id="myFontText" spellcheck="false">This is a test sentence.\</textarea>
+
+&#x20; \<div class="font-controls">     \<label for="myFontSize">Font size:\</label>     \<input type="range" id="myFontSize" min="12" max="100" value="36">     \<span id="myFontSizeValue">36px\</span>   \</div>
+
+\<button type="button" id="myFontReset">Reset text\</button>
+
+&#x20; \<a class="font-download" href="/assets/fonts/ICMm%20Koersbord%20v13.ttf" download>     Download ICMm Koersbord v13.ttf   \</a> \</div>
+
+\<style> @font-face {   font-family: "ICMmKoersbord";   src: url("/assets/fonts/ICMm%20Koersbord%20v13.ttf") format("truetype");   font-weight: normal;   font-style: normal;   font-display: swap; }  .font-card {   border: 1px solid #ccc;   border-radius: 10px;   padding: 20px;   margin: 25px 0; }  #myFontText {   display: block;   box-sizing: border-box;   width: 100%;   min-height: 180px;   padding: 15px;   font-family: "ICMmKoersbord", sans-serif;   font-size: 36px;   resize: vertical;   border: 1px solid #aaa;   border-radius: 6px; }  .font-controls {   display: flex;   align-items: center;   gap: 12px;   margin: 15px 0; }  .font-controls input {   flex: 1; }  .font-download, .font-card button {   display: inline-block;   padding: 10px 16px;   margin: 5px;   border-radius: 5px;   background: #333;   color: white;   text-decoration: none;   border: none;   cursor: pointer; } \</style>
+
+\<script> (function () {   const text = document.getElementById("myFontText");   const size = document.getElementById("myFontSize");   const sizeValue = document.getElementById("myFontSizeValue");   const reset = document.getElementById("myFontReset");    if (!text || !size || !sizeValue || !reset) return;    size.addEventListener("input", function () {     text.style.fontSize = size.value + "px";     sizeValue.textContent = size.value + "px";   });    reset.addEventListener("click", function () {     text.value = "This is a test sentence.";   }); })(); \</script>
+
 
 <style>
 .font-tester {
