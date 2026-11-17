@@ -120,6 +120,11 @@ body label, body span {
 .font-card button:hover {
   background: #555;
 }
+/* Match the font-size slider to the buttons */
+.font-controls input[type="range"] {
+  accent-color: #000080;
+}
+  
 </style>
 
 <script>
