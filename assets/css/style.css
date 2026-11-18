@@ -1,15 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #252525;
   color: #FFFFFF;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,4 +29,59 @@ a {
 
 a:hover {
   color: #FFAD5C;
+}
+
+/* HEADER */
+.site-header {
+  width: 100%;
+  min-height: 50px;
+  background-color: #1B1B1B;
+  border-bottom: 1px solid #444;
+}
+
+.header-inner {
+  width: 100%;
+  min-height: 50px;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.site-logo img {
+  display: block;
+  height: 30px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+}
+
+.main-nav a:not(.site-logo) {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.main-nav a:not(.site-logo):hover {
+  color: #FF8000;
+}
+
+/* PAGE CONTENT */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
