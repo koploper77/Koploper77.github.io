@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
 
 <h3>Try the font!</h3>
 
-<textarea id="myFontText_ICMm" spellcheck="false">This is a test sentence.</textarea>
+<textarea id="myFontText_ICMm" spellcheck="false" placeholder="Type text here..."></textarea>
 
 <div class="font-controls">
   <label for="myFontSize">Font size:</label>
@@ -33,7 +33,7 @@
   <span id="myFontSizeValue">36px</span>
 </div>
 
-<button type="button" id="myFontReset">Reset text</button>
+<button type="button" id="myFontReset">Clear text</button>
 
 <a class="font-download" href="/assets/fonts/ICMm%20Koersbord%20v15.ttf" download>
   Download the font
@@ -49,7 +49,7 @@
 
 <h3>Try the font!</h3>
 
-<textarea id="myFontText_MS96" spellcheck="false" wrap="off">This is a test sentence.</textarea>
+<textarea id="myFontText_MS96" spellcheck="false" placeholder="Type text here...">Type text here...</textarea>
 
 <div class="font-controls">
   <label for="myFontSize_MS96">Font size:</label>
@@ -71,7 +71,7 @@
   </label>
 </div>
 
-<button type="button" id="myFontReset_MS96">Reset text</button>
+<button type="button" id="myFontReset_MS96">Clear text</button>
 
 <a class="font-download" href="/assets/fonts/NMBS%20MS96%20Koersbord%20Binnenkant%20v26_correctmap.ttf" download>
   Download the font
@@ -234,7 +234,7 @@ body label, body span {
   });
 
   reset.addEventListener("click", function () {
-    text.value = "This is a test sentence.";
+    text.value = "";
   });
 })();
 
@@ -253,7 +253,7 @@ body label, body span {
   });
 
   reset.addEventListener("click", function () {
-    text.value = "This is a test sentence.";
+    text.value = "";
   });
 
   const scroll = document.getElementById("myFontScroll_MS96");
