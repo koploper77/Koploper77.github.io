@@ -1,34 +1,131 @@
 
----
----
-
+/* General website */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
-/* =================================
-   GLOBAL WEBSITE TYPOGRAPHY
-   ================================= */
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Source Sans 3', sans-serif !important;
-  font-size: 16px;
+  margin: 0;
+  background: #252525;
+  color: #FFFFFF;
+  font-family: 'Source Sans 3', sans-serif;
   line-height: 1.6;
 }
 
-/* Headings */
+/* Header */
+.site-header {
+  width: 100%;
+  background: #1B1B1B;
+  border-bottom: 1px solid #444;
+}
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans 3', sans-serif !important;
+.header-inner {
+  width: 100%;
+  min-height: 65px;
+  margin: 0;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.site-logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.site-logo img {
+  display: block;
+  height: 25px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  margin-left: 0;
+}
+
+.main-nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 17px;
   font-weight: 600;
+  transition: color 0.2s;
 }
 
-/* Paragraphs and general text */
-
-p, li, a, span {
-  font-family: 'Source Sans 3', sans-serif;
+.main-nav a:hover {
+  color: #FF8000;
 }
 
-/* Navigation */
+/* Main content */
+main {
+  max-width: 1100px;
+  min-height: 65vh;
+  margin: 40px auto;
+  padding: 0 25px;
+}
 
-nav {
-  font-family: 'Source Sans 3', sans-serif;
+/* Footer */
+.site-footer {
+  background: #1B1B1B;
+  border-top: 1px solid #444;
+  margin-top: 60px;
+  padding: 25px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-inner p {
+  color: #AAAAAA;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #FF8000;
+}
+
+/* Mobile layout */
+@media(max-width:600px) {
+  .header-inner {
+    flex-direction: column;
+  }
+}
+
+  .main-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
 }
