@@ -80,7 +80,30 @@ Type text here..."></textarea>
 
 </div>
 
+<h2>SGMm dotmatrix font</h2>
+<p>This is a recreation of the font used on both the exterior and interior dotmatrix screens of Dutch NS SGMm (Sprinter) trains.</p>
+<p>Note: the characters "q", "F", "I", "P", "T" and "!" were drawn as guesses based on the other characters.</p>
+<p>Note: the characters "G", "J", "K", "Q", "W", "X", "Y", "f", "x", "y", "z", "0", "2", "3", "7" and "9" are currently unfortunately missing due to a lack of reference material.</p>
 
+<div class="font-card">
+
+<h3>Try the font!</h3>
+
+<textarea id="myFontText_SGMm" spellcheck="false" placeholder="Test"></textarea>
+
+<div class="font-controls">
+  <label for="myFontSize_SGMm">Font size:</label>
+  <input type="range" id="myFontSize_SGMm" min="12" max="100" value="36">
+  <span id="myFontSizeValue_SGMm">36px</span>
+</div>
+
+<button type="button" id="myFontReset_SGMm">Clear text</button>
+
+<a class="font-download" href="/assets/fonts/SGMm%20binnenbord%20v5_v2.ttf" download>
+  Download the font
+</a>
+
+</div>
 
 
 
@@ -208,10 +231,48 @@ Type text here..."></textarea>
   text-align: left;
 }
 
+
+/* SGMm font */
+@font-face {
+  font-family: "SGMmBinnenkant";
+  src: url("/assets/fonts/SGMm%20binnenbord%20v5_v2.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SGMm tester */
+#myFontText_SGMm {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 180px;
+  padding: 15px;
+
+  font-family: "SGMmBinnenkant", sans-serif;
+  font-size: 36px;
+
+  background-color: #1E1913;
+  color: #EDB700;
+  text-align: center;
+
+  resize: vertical;
+  border: 1px solid #555555;
+  border-radius: 6px;
+
+  text-shadow:
+    0 0 1px #F5C52E,
+    0 0 2px #D5A500;
+}
+
+
   
 </style>
 
 <script>
+
+
+// ICMm
 (function () {
   const text = document.getElementById("myFontText_ICMm");
   const size = document.getElementById("myFontSize");
@@ -230,7 +291,7 @@ Type text here..."></textarea>
   });
 })();
 
-//For MS96
+// MS96
 (function () {
   const text = document.getElementById("myFontText_MS96");
   const size = document.getElementById("myFontSize_MS96");
@@ -249,53 +310,75 @@ Type text here..."></textarea>
   });
 
   const scroll = document.getElementById("myFontScroll_MS96");
-const reveal = document.getElementById("myFontReveal_MS96");
+  const reveal = document.getElementById("myFontReveal_MS96");
 
-let revealTimer;
+  let revealTimer;
+  let scrollTimer;
 
-let scrollTimer;
+  if (scroll) {
+    scroll.addEventListener("change", function () {
+      clearInterval(scrollTimer);
+      text.classList.toggle("scrolling", scroll.checked);
 
-scroll.addEventListener("change", function () {
-  clearInterval(scrollTimer);
+      if (scroll.checked) {
+        text.scrollLeft = 0;
 
-  text.classList.toggle("scrolling", scroll.checked);
+        scrollTimer = setInterval(function () {
+          text.scrollLeft += 1;
 
-  if (scroll.checked) {
-    text.scrollLeft = 0;
-
-    scrollTimer = setInterval(function () {
-      text.scrollLeft += 1;
-
-      if (text.scrollLeft >= text.scrollWidth - text.clientWidth) {
+          if (text.scrollLeft >= text.scrollWidth - text.clientWidth) {
+            text.scrollLeft = 0;
+          }
+        }, 20);
+      } else {
         text.scrollLeft = 0;
       }
-    }, 20);
-  } else {
-    text.scrollLeft = 0;
-  }
-});
-
-reveal.addEventListener("change", function () {
-  clearInterval(revealTimer);
-
-  if (!reveal.checked) {
-    text.style.opacity = "1";
-    return;
+    });
   }
 
-  text.style.opacity = "0";
-  let opacity = 0;
-
-  revealTimer = setInterval(function () {
-    opacity += 0.05;
-    text.style.opacity = opacity;
-
-    if (opacity >= 1) {
+  if (reveal) {
+    reveal.addEventListener("change", function () {
       clearInterval(revealTimer);
-    }
-  }, 200);
-});
+
+      if (!reveal.checked) {
+        text.style.opacity = "1";
+        return;
+      }
+
+      text.style.opacity = "0";
+      let opacity = 0;
+
+      revealTimer = setInterval(function () {
+        opacity += 0.05;
+        text.style.opacity = opacity;
+
+        if (opacity >= 1) {
+          clearInterval(revealTimer);
+        }
+      }, 200);
+    });
+  }
 })();
+
+// SGMm
+(function () {
+  const text = document.getElementById("myFontText_SGMm");
+  const size = document.getElementById("myFontSize_SGMm");
+  const sizeValue = document.getElementById("myFontSizeValue_SGMm");
+  const reset = document.getElementById("myFontReset_SGMm");
+
+  if (!text || !size || !sizeValue || !reset) return;
+
+  size.addEventListener("input", function () {
+    text.style.fontSize = size.value + "px";
+    sizeValue.textContent = size.value + "px";
+  });
+
+  reset.addEventListener("click", function () {
+    text.value = "";
+  });
+})();
+
 
 </script>
 
