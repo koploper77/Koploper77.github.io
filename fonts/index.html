@@ -106,6 +106,33 @@ Type text here..."></textarea>
 </div>
 
 
+<h2>Arriva Limburg Stadler GTW-D Flipdot font</h2>
+
+<p>This is a pixel perfect recreation of the font used on the exterior front destination flipdot displays of Arriva Stadler GTW-D trains, specifically those that operate on the Maaslijn. Special thanks to dino.0412_ for prodiving a lot of picture reference material for these letters.</p>
+
+<div class="font-card">
+
+  <h3>Try the font!</h3>
+
+  <textarea id="myFontText_GTWVoorkant" spellcheck="false"
+    placeholder="type text here..."></textarea>
+
+  <div class="font-controls">
+    <label for="myFontSize_GTWVoorkant">Font size:</label>
+    <input type="range" id="myFontSize_GTWVoorkant" min="12" max="100" value="36">
+    <span id="myFontSizeValue_GTWVoorkant">36px</span>
+  </div>
+
+  <button type="button" id="myFontReset_GTWVoorkant">Clear text</button>
+
+  <a class="font-download"
+    href="/assets/fonts/Stadler%20GTW-D%20Koersbord%20Flipdot%20voorkant%20v4.ttf"
+    download>
+    Download the font
+  </a>
+
+</div>
+
 
 <style>
 
@@ -266,6 +293,37 @@ Type text here..."></textarea>
 }
 
 
+/* Arriva Stadler GTW-D font */
+@font-face {
+  font-family: "StadlerGTWD";
+  src: url("/assets/fonts/Stadler%20GTW-D%20Koersbord%20Flipdot%20voorkant%20v4.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GTW-D voorkant flipdot tester */
+#myFontText_GTWVoorkant {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 180px;
+  padding: 15px;
+
+  font-family: "StadlerGTWD", sans-serif;
+  font-size: 36px;
+
+  background-color: #283347;
+  color: #ACCF7F;
+  text-align: center;
+
+  resize: vertical;
+  border: 1px solid #555;
+  border-radius: 6px;
+
+
+}
+
   
 </style>
 
@@ -366,6 +424,27 @@ Type text here..."></textarea>
   const size = document.getElementById("myFontSize_SGMm");
   const sizeValue = document.getElementById("myFontSizeValue_SGMm");
   const reset = document.getElementById("myFontReset_SGMm");
+
+  if (!text || !size || !sizeValue || !reset) return;
+
+  size.addEventListener("input", function () {
+    text.style.fontSize = size.value + "px";
+    sizeValue.textContent = size.value + "px";
+  });
+
+  reset.addEventListener("click", function () {
+    text.value = "";
+  });
+})();
+
+
+
+// Arriva Stadler GTW-D
+(function () {
+  const text = document.getElementById("myFontText_GTWVoorkant");
+  const size = document.getElementById("myFontSize_GTWVoorkant");
+  const sizeValue = document.getElementById("myFontSizeValue_GTWVoorkant");
+  const reset = document.getElementById("myFontReset_GTWVoorkant");
 
   if (!text || !size || !sizeValue || !reset) return;
 
