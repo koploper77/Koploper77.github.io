@@ -125,6 +125,10 @@ Type text here..."></textarea>
 
   <button type="button" id="myFontReset_GTWVoorkant">Clear text</button>
 
+  <button type="button" id="myFontLED_GTWVoorkant">
+  Turn LEDs on
+  </button>
+
   <a class="font-download"
     href="/assets/fonts/Stadler%20GTW-D%20Koersbord%20Flipdot%20voorkant%20v4.ttf"
     download>
@@ -324,6 +328,14 @@ Type text here..."></textarea>
 
 }
 
+
+/* GTW-D flipdot LEDs */
+#myFontText_GTWVoorkant.leds-on {
+  text-shadow:
+    0.2px -0.2px 0 #39FF14,
+    0 0 0.5px #39FF14;
+}
+
   
 </style>
 
@@ -439,14 +451,16 @@ Type text here..."></textarea>
 
 
 
+
 // Arriva Stadler GTW-D
 (function () {
   const text = document.getElementById("myFontText_GTWVoorkant");
   const size = document.getElementById("myFontSize_GTWVoorkant");
   const sizeValue = document.getElementById("myFontSizeValue_GTWVoorkant");
   const reset = document.getElementById("myFontReset_GTWVoorkant");
+  const led = document.getElementById("myFontLED_GTWVoorkant");
 
-  if (!text || !size || !sizeValue || !reset) return;
+  if (!text || !size || !sizeValue || !reset || !led) return;
 
   size.addEventListener("input", function () {
     text.style.fontSize = size.value + "px";
@@ -456,7 +470,17 @@ Type text here..."></textarea>
   reset.addEventListener("click", function () {
     text.value = "";
   });
+
+  // Toggle flipdot LEDs
+  led.addEventListener("click", function () {
+    text.classList.toggle("leds-on");
+
+    led.textContent = text.classList.contains("leds-on")
+      ? "Turn LEDs off"
+      : "Turn LEDs on";
+  });
 })();
+
 
 
 </script>
